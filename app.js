@@ -17,7 +17,7 @@ mapping = function(handler) {
 	});
  	};
  };
-
+moment = require('moment');
 var express = require('express')
   , routes = require('./routes/index')
   , user = require('./routes/user')
@@ -46,6 +46,7 @@ if ('development' == app.get('env')) {
 app.get('/', routes.index);
 //用户相关接口
 app.get('/UserLogin', user.UserLogin);
+app.get('/DayInfo', user.DayInfo);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
