@@ -7,6 +7,8 @@ exports.UserLogin = mapping(login);
 exports.DayInfo = mapping(getDayInfo);
 
 function login(connection, req, res) {
+	console.log(req.query);
+
 	var username = req.query.UserName;
 	var password = req.query.Password;
 	var ostype = req.query.OSType;
